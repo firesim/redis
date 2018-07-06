@@ -12,6 +12,10 @@
 # Dependencies are stored in the Makefile.dep file. To rebuild this file
 # Just use 'make dep', but this is only needed by developers.
 
+CROSS_COMPILE=riscv64-unknown-linux-gnu
+CC=$(CROSS_COMPILE)-gcc
+CXX=$(CROSS_COMPILE)-g++
+
 release_hdr := $(shell sh -c './mkreleasehdr.sh')
 uname_S := $(shell sh -c 'uname -s 2>/dev/null || echo not')
 uname_M := $(shell sh -c 'uname -m 2>/dev/null || echo not')
